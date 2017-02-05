@@ -1,0 +1,7 @@
+---
+applications:
+  - name: cores-msr-jpa
+    buildpack: java_buildpack
+    path: target/predix-jpa-cf-1.0.0.jar
+services:
+    - rahul-postgres
