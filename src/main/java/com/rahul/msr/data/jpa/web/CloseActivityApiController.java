@@ -1,6 +1,6 @@
 package com.rahul.msr.data.jpa.web;
 
-/*import java.math.BigInteger;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.Collection;
 
@@ -21,7 +21,7 @@ public class CloseActivityApiController {
 	@Autowired
 	private CORESMSRService customerService;
 
-	public static final String CLOSEACTIVITY = "/appreciations";
+	public static final String CLOSEACTIVITY = "/closeactivity";
 	public static final String SEARCH_CLOSEACTIVITY = "/search";
 	public static final String GET_CLOSEACTIVITY_BY_ID = CLOSEACTIVITY + "/{id}";
 
@@ -36,4 +36,3 @@ public class CloseActivityApiController {
         return customerService.createCloseActivity(activityDate, applicationId, applicationName, description, frequency).getId();
     }
 }
-*/
