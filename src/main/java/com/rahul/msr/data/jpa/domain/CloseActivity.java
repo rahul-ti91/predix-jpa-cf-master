@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -14,7 +16,9 @@ public class CloseActivity implements Serializable{
 	private static final long serialVersionUID = 5760092795796485889L;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
+	
 	private Date activityDate;
 	private String frequency;
 	private String description;
@@ -22,9 +26,6 @@ public class CloseActivity implements Serializable{
 	private BigInteger applicationId;
 	private Date createdDate;
 	
-	public CloseActivity() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public BigInteger getId() {
 		return id;

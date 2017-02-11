@@ -10,22 +10,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CORESIssues implements Serializable {
+public class WeeklyHighlights implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -817878378758404785L;
+	private static final long serialVersionUID = -7742908190627286927L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
-	
-	private String issue;
+
+	private Date week;
+	private String highlights;
 	private String applicationName;
 	private BigInteger applicationId;
-	private Date createdDate;
-	
+	private Date creationDate;
 
 	public BigInteger getId() {
 		return id;
@@ -34,7 +34,22 @@ public class CORESIssues implements Serializable {
 	public void setId(BigInteger id) {
 		this.id = id;
 	}
-	
+
+	public Date getWeek() {
+		return week;
+	}
+
+	public void setWeek(Date week) {
+		this.week = week;
+	}
+
+	public String getHighlights() {
+		return highlights;
+	}
+
+	public void setHighlights(String highlights) {
+		this.highlights = highlights;
+	}
 
 	public String getApplicationName() {
 		return applicationName;
@@ -52,22 +67,12 @@ public class CORESIssues implements Serializable {
 		this.applicationId = applicationId;
 	}
 
-	public String getIssue() {
-		return issue;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setIssue(String issue) {
-		this.issue = issue;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-	
-	
-	
 }

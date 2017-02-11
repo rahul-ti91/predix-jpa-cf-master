@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -16,17 +18,15 @@ public class NONSNData implements Serializable{
 	private static final long serialVersionUID = -8618699422718250047L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
 	
-	private String week;
+	private Date week;
 	private String data;
 	private String applicationName;
 	private BigInteger applicationId;
 	private Date creationDate;
 	
-	public NONSNData() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public BigInteger getId() {
 		return id;
@@ -52,11 +52,11 @@ public class NONSNData implements Serializable{
 		this.applicationId = applicationId;
 	}
 
-	public String getWeek() {
+	public Date getWeek() {
 		return week;
 	}
 
-	public void setWeek(String week) {
+	public void setWeek(Date week) {
 		this.week = week;
 	}
 

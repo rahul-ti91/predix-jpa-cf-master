@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -16,6 +18,7 @@ public class DRCalendar implements Serializable{
 	private static final long serialVersionUID = -4052826197341625247L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
 	
 	private Date drCompletionDate;
@@ -24,9 +27,6 @@ public class DRCalendar implements Serializable{
 	private BigInteger applicationId;
 	private Date creationDate;
 	
-	public DRCalendar() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public BigInteger getId() {
 		return id;

@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -16,6 +18,7 @@ public class Appreciations implements Serializable{
 	private static final long serialVersionUID = -2671346215341818729L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
 	
 	private String Appreciation;
@@ -23,10 +26,7 @@ public class Appreciations implements Serializable{
 	private BigInteger applicationId;
 	private Date creationDate;
 	
-	public Appreciations() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public BigInteger getId() {
 		return id;
 	}

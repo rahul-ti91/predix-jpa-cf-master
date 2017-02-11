@@ -2,6 +2,7 @@ package com.rahul.msr.data.jpa.web;
 
 import java.math.BigInteger;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -31,7 +32,7 @@ public class NONSNDataApiController {
 	}
 	
 	@RequestMapping(value = NONSNDATA, method = RequestMethod.POST)
-    public BigInteger addCustomer(@RequestParam String applicationName, @RequestParam BigInteger applicationId, @RequestParam String nonsndata, @RequestParam String week) {
+    public BigInteger addCustomer(@RequestParam String applicationName, @RequestParam BigInteger applicationId, @RequestParam String nonsndata, @RequestParam Date week) {
         return customerService.createNONSNData(applicationId, applicationName, nonsndata, week).getId();
     }
 }

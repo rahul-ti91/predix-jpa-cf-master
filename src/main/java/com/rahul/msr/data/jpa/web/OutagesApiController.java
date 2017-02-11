@@ -30,9 +30,12 @@ public class OutagesApiController {
 		Collection<Outages> outages = customerService.getOutages();
 		return outages;
 	}
-	
+
 	@RequestMapping(value = OUTAGES, method = RequestMethod.POST)
-    public BigInteger addCustomer(@RequestParam String applicationName, @RequestParam BigInteger applicationId, @RequestParam String duration, @RequestParam boolean rcaDone, @RequestParam String outageType, @RequestParam String outageReason, @RequestParam Date outageDate, @RequestParam String startTime) {
-        return customerService.createOutage(applicationId, applicationName, duration, rcaDone, outageType, outageDate, outageReason, startTime).getId();
-    }
+	public BigInteger addCustomer(@RequestParam String applicationName, @RequestParam BigInteger applicationId,
+			@RequestParam String duration, @RequestParam boolean rcaDone, @RequestParam String outageType,
+			@RequestParam String outageReason, @RequestParam Date outageDate, @RequestParam String startTime) {
+		return customerService.createOutage(applicationId, applicationName, duration, rcaDone, outageType, outageDate,
+				outageReason, startTime).getId();
+	}
 }

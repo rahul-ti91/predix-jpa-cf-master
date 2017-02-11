@@ -10,22 +10,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CORESIssues implements Serializable {
+public class ReleaseCalendar implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -817878378758404785L;
+	private static final long serialVersionUID = -6707314592894665297L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
-	
-	private String issue;
+
+	private Date releaseCompletionDate;
+	private Date upcomingReleaseDate;
 	private String applicationName;
 	private BigInteger applicationId;
-	private Date createdDate;
-	
+	private Date creationDate;
 
 	public BigInteger getId() {
 		return id;
@@ -34,7 +34,22 @@ public class CORESIssues implements Serializable {
 	public void setId(BigInteger id) {
 		this.id = id;
 	}
-	
+
+	public Date getReleaseCompletionDate() {
+		return releaseCompletionDate;
+	}
+
+	public void setReleaseCompletionDate(Date releaseCompletionDate) {
+		this.releaseCompletionDate = releaseCompletionDate;
+	}
+
+	public Date getUpcomingReleaseDate() {
+		return upcomingReleaseDate;
+	}
+
+	public void setUpcomingReleaseDate(Date upcomingReleaseDate) {
+		this.upcomingReleaseDate = upcomingReleaseDate;
+	}
 
 	public String getApplicationName() {
 		return applicationName;
@@ -52,22 +67,12 @@ public class CORESIssues implements Serializable {
 		this.applicationId = applicationId;
 	}
 
-	public String getIssue() {
-		return issue;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setIssue(String issue) {
-		this.issue = issue;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-	
-	
-	
 }
