@@ -29,7 +29,7 @@ public class Outages implements Serializable{
 	private String outageReason;
 	private String applicationName;
 	private BigInteger applicationId;
-	private Date createdDate;
+	private Date creationDate;
 	
 
 	public BigInteger getId() {
@@ -104,14 +104,12 @@ public class Outages implements Serializable{
 		this.outageReason = outageReason;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
-	
-	
 	
 }

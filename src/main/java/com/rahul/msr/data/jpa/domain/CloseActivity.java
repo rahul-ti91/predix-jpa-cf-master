@@ -10,22 +10,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CloseActivity implements Serializable{
+public class CloseActivity implements Serializable {
 
-	
 	private static final long serialVersionUID = 5760092795796485889L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
-	
+
 	private Date activityDate;
 	private String frequency;
 	private String description;
 	private String applicationName;
 	private BigInteger applicationId;
-	private Date createdDate;
-	
+	private Date creationDate;
 
 	public BigInteger getId() {
 		return id;
@@ -75,15 +73,11 @@ public class CloseActivity implements Serializable{
 		this.description = description;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
-	
-	
-	
-	
 }

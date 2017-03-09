@@ -6,8 +6,9 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rahul.msr.data.jpa.domain.*;
 
+
+import com.rahul.msr.data.jpa.domain.*;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -38,7 +39,8 @@ public class CORESMSRService {
 	public Collection<Customer> search(String name) {
 		String sqlName = ("%" + name + "%").toLowerCase();
 		String sql = "select c.* from customer c where (LOWER( c.name ) LIKE :fn)";
-		return em.createNativeQuery(sql, Customer.class).setParameter("fn", sqlName).getResultList();
+		return em.createNativeQuery(sql, Customer.class)
+				.setParameter("fn", sqlName).getResultList();
 	}
 
 	@Transactional(readOnly = true)
@@ -79,7 +81,8 @@ public class CORESMSRService {
 		return em.createQuery("from Applications").getResultList();
 	}
 
-	public Appreciations createAppreciation(String applicationName, BigInteger applicationId, String appreciation) {
+	public Appreciations createAppreciation(String applicationName,
+			BigInteger applicationId, String appreciation) {
 		Appreciations appreciation1 = new Appreciations();
 		appreciation1.setApplicationName(applicationName);
 		appreciation1.setAppreciation(appreciation);
@@ -94,13 +97,14 @@ public class CORESMSRService {
 		return em.createQuery("from Appreciations").getResultList();
 	}
 
-	public CloseActivity createCloseActivity(Date activityDate, BigInteger applicationId, String applicationName,
+	public CloseActivity createCloseActivity(Date activityDate,
+			BigInteger applicationId, String applicationName,
 			String description, String frequency) {
 		CloseActivity closeActivity = new CloseActivity();
 		closeActivity.setActivityDate(activityDate);
 		closeActivity.setApplicationId(applicationId);
 		closeActivity.setApplicationName(applicationName);
-		closeActivity.setCreatedDate(new Date());
+		closeActivity.setCreationDate(new Date());
 		closeActivity.setDescription(description);
 		closeActivity.setFrequency(frequency);
 		em.persist(closeActivity);
@@ -111,11 +115,12 @@ public class CORESMSRService {
 		return em.createQuery("from CloseActivity").getResultList();
 	}
 
-	public CORESIssues createIssue(BigInteger applicationId, String applicationName, String issue) {
+	public CORESIssues createIssue(BigInteger applicationId,
+			String applicationName, String issue) {
 		CORESIssues coresIssues = new CORESIssues();
 		coresIssues.setApplicationId(applicationId);
 		coresIssues.setApplicationName(applicationName);
-		coresIssues.setCreatedDate(new Date());
+		coresIssues.setCreationDate(new Date());
 		coresIssues.setIssue(issue);
 		em.persist(coresIssues);
 		return coresIssues;
@@ -125,8 +130,8 @@ public class CORESMSRService {
 		return em.createQuery("from CORESIssues").getResultList();
 	}
 
-	public DRCalendar createDRCalendar(BigInteger applicationId, String applicationName, Date drCompletionDate,
-			Date upcomingDRDate) {
+	public DRCalendar createDRCalendar(BigInteger applicationId,
+			String applicationName, Date drCompletionDate, Date upcomingDRDate) {
 		DRCalendar calendar = new DRCalendar();
 		calendar.setApplicationId(applicationId);
 		calendar.setApplicationName(applicationName);
@@ -141,8 +146,9 @@ public class CORESMSRService {
 		return em.createQuery("from DRCalendar").getResultList();
 	}
 
-	public ReleaseCalendar createReleaseCalendar(BigInteger applicationId, String applicationName,
-			Date releaseCompletionDate, Date upcomingReleaseDate) {
+	public ReleaseCalendar createReleaseCalendar(BigInteger applicationId,
+			String applicationName, Date releaseCompletionDate,
+			Date upcomingReleaseDate) {
 		ReleaseCalendar calendar = new ReleaseCalendar();
 		calendar.setApplicationId(applicationId);
 		calendar.setApplicationName(applicationName);
@@ -157,8 +163,9 @@ public class CORESMSRService {
 		return em.createQuery("from ReleaseCalendar").getResultList();
 	}
 
-	public Ideas createIdeas(BigInteger applicationId, String applicationName, String businessBenefits,
-			String ideaDescription, String ideaState, String implamentationPlan) {
+	public Ideas createIdeas(BigInteger applicationId, String applicationName,
+			String businessBenefits, String ideaDescription, String ideaState,
+			String implamentationPlan) {
 		Ideas ideas = new Ideas();
 		ideas.setApplicationId(applicationId);
 		ideas.setApplicationName(applicationName);
@@ -175,8 +182,9 @@ public class CORESMSRService {
 		return em.createQuery("from Ideas").getResultList();
 	}
 
-	public LeaveCalendar createLeaveCalendar(BigInteger applicationId, String applicationName, String backup,
-			String leaveType, Date leaveEndDate, Date leaveStartDate) {
+	public LeaveCalendar createLeaveCalendar(BigInteger applicationId,
+			String applicationName, String backup, String leaveType,
+			Date leaveEndDate, Date leaveStartDate) {
 		LeaveCalendar calendar = new LeaveCalendar();
 		calendar.setApplicationId(applicationId);
 		calendar.setApplicationName(applicationName);
@@ -193,7 +201,8 @@ public class CORESMSRService {
 		return em.createQuery("from LeaveCalendar").getResultList();
 	}
 
-	public NONSNData createNONSNData(BigInteger applicationId, String applicationName, String nonsndata, Date week) {
+	public NONSNData createNONSNData(BigInteger applicationId,
+			String applicationName, String nonsndata, Date week) {
 		NONSNData data = new NONSNData();
 		data.setApplicationId(applicationId);
 		data.setApplicationName(applicationName);
@@ -208,8 +217,8 @@ public class CORESMSRService {
 		return em.createQuery("from NONSNData").getResultList();
 	}
 
-	public WeeklyHighlights createWeeklyHighlights(BigInteger applicationId, String applicationName, String highlights,
-			Date week) {
+	public WeeklyHighlights createWeeklyHighlights(BigInteger applicationId,
+			String applicationName, String highlights, Date week) {
 		WeeklyHighlights weeklyHighlights = new WeeklyHighlights();
 		weeklyHighlights.setApplicationId(applicationId);
 		weeklyHighlights.setApplicationName(applicationName);
@@ -224,12 +233,14 @@ public class CORESMSRService {
 		return em.createQuery("from WeeklyHighlights").getResultList();
 	}
 
-	public Outages createOutage(BigInteger applicationId, String applicationName, String duration, boolean rcaDone,
-			String outageType, Date outageDate, String outageReason, String startTime) {
+	public Outages createOutage(BigInteger applicationId,
+			String applicationName, String duration, boolean rcaDone,
+			String outageType, Date outageDate, String outageReason,
+			String startTime) {
 		Outages outages = new Outages();
 		outages.setApplicationId(applicationId);
 		outages.setApplicationName(applicationName);
-		outages.setCreatedDate(new Date());
+		outages.setCreationDate(new Date());
 		outages.setDuration(duration);
 		outages.setOutageDate(outageDate);
 		outages.setOutageReason(outageReason);
@@ -244,7 +255,8 @@ public class CORESMSRService {
 		return em.createQuery("from Outages").getResultList();
 	}
 
-	public Trainings createTraining(Integer empId, String empName, String trainingName, String trainingType) {
+	public Trainings createTraining(Integer empId, String empName,
+			String trainingName, String trainingType) {
 		Trainings trainings = new Trainings();
 		trainings.setCreationDate(new Date());
 		trainings.setEmpId(empId);
@@ -257,5 +269,34 @@ public class CORESMSRService {
 
 	public List<Trainings> getTrainings() {
 		return em.createQuery("from Trainings").getResultList();
+	}
+
+	public List getMSRData(String qString) {
+		return em.createQuery(qString).getResultList();
+	}
+
+	public String queryProvider(String tableName, int month) {
+		return "select d from " + tableName
+				+ " d where date_part('month', d.creationDate) = " + month;
+	}
+
+	public MSRReport getMSRReport(int month) {
+		MSRReport msrReport = new MSRReport();
+
+		msrReport.setAppreciations(getMSRData(queryProvider("Appreciations",
+				month)));
+		msrReport.setCloseActivities(getMSRData(queryProvider("CloseActivity",
+				month)));
+		msrReport
+				.setCoresIssues(getMSRData(queryProvider("CORESIssues", month)));
+		msrReport
+				.setDrcalendars(getMSRData(queryProvider("DRCalendar", month)));
+		msrReport.setIdeas(getMSRData(queryProvider("Ideas", month)));
+		msrReport.setNonsnDatas(getMSRData(queryProvider("NONSNData", month)));
+		msrReport.setOutages(getMSRData(queryProvider("Outages", month)));
+		msrReport.setReleaseCalendars(getMSRData(queryProvider(
+				"ReleaseCalendar", month)));
+		msrReport.setTrainings(getMSRData(queryProvider("Trainings", month)));
+		return msrReport;
 	}
 }

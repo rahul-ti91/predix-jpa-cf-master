@@ -20,12 +20,11 @@ public class CORESIssues implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
-	
+
 	private String issue;
 	private String applicationName;
 	private BigInteger applicationId;
-	private Date createdDate;
-	
+	private Date creationDate;
 
 	public BigInteger getId() {
 		return id;
@@ -34,7 +33,6 @@ public class CORESIssues implements Serializable {
 	public void setId(BigInteger id) {
 		this.id = id;
 	}
-	
 
 	public String getApplicationName() {
 		return applicationName;
@@ -60,14 +58,11 @@ public class CORESIssues implements Serializable {
 		this.issue = issue;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
-	
-	
-	
 }
