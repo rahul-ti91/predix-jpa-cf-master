@@ -21,6 +21,7 @@ public class LeaveCalendar implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private BigInteger id;
 	
+	private String associate;
 	private Date leaveStartDate;
 	private Date leaveEndDate;
 	private String backup;
@@ -38,6 +39,13 @@ public class LeaveCalendar implements Serializable{
 		this.id = id;
 	}
 	
+	public String getAssociate() {
+		return associate;
+	}
+
+	public void setAssociate(String associate) {
+		this.associate = associate;
+	}
 
 	public BigInteger getApplicationId() {
 		return applicationId;

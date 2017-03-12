@@ -48,7 +48,7 @@ public class CustomerApiController {
     }
 
     @RequestMapping(value = GET_CUSTOMERS_BY_ID, method = RequestMethod.PUT)
-    public Integer updateCustomer(@PathVariable  Integer id, @RequestBody Customer customer) {
+	public Integer updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
         customerService.updateCustomer(id, customer.getName(), customer.getPhone(), customer.getTStamp());
         return id;
     }

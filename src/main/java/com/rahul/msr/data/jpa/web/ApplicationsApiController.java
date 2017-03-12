@@ -29,10 +29,10 @@ public class ApplicationsApiController {
 		Collection<Applications> applications = customerService.getApplications();
 		return applications;
 	}
-	
+
 	@RequestMapping(value = APPLICATIONS, method = RequestMethod.POST)
-    public BigInteger addCustomer(@RequestParam String applicationName) {
-        return customerService.createApplication(applicationName).getId();
-    }
+	public BigInteger addCustomer(@RequestParam String applicationName) {
+		return customerService.createApplication(applicationName).getId();
+	}
 
 }
