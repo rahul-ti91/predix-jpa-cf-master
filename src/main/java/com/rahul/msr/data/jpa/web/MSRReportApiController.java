@@ -26,5 +26,4 @@ public class MSRReportApiController {
 	public MSRReport addCustomer(@RequestParam int month) {
 		return customerService.getMSRReport(month);
 	}
-
 }

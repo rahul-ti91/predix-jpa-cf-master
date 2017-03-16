@@ -12,60 +12,95 @@ public class MSRReport {
 	private List<Outages> outages;
 	private List<ReleaseCalendar> releaseCalendars;
 	private List<Trainings> trainings;
-	
+	private List<LeaveCalendar> leaveCalendars;
+	private List<WeeklyHighlights> weeklyHighlights;
+
 	public List<CloseActivity> getCloseActivities() {
 		return closeActivities;
 	}
+
 	public void setCloseActivities(List<CloseActivity> closeActivities) {
 		this.closeActivities = closeActivities;
 	}
+
 	public List<Appreciations> getAppreciations() {
 		return appreciations;
 	}
+
 	public void setAppreciations(List<Appreciations> appreciations) {
 		this.appreciations = appreciations;
 	}
+
 	public List<CORESIssues> getCoresIssues() {
 		return coresIssues;
 	}
+
 	public void setCoresIssues(List<CORESIssues> coresIssues) {
 		this.coresIssues = coresIssues;
 	}
+
 	public List<DRCalendar> getDrcalendars() {
 		return drcalendars;
 	}
+
 	public void setDrcalendars(List<DRCalendar> drcalendars) {
 		this.drcalendars = drcalendars;
 	}
+
 	public List<Ideas> getIdeas() {
 		return ideas;
 	}
+
 	public void setIdeas(List<Ideas> ideas) {
 		this.ideas = ideas;
 	}
+
 	public List<NONSNData> getNonsnDatas() {
 		return nonsnDatas;
 	}
+
 	public void setNonsnDatas(List<NONSNData> nonsnDatas) {
 		this.nonsnDatas = nonsnDatas;
 	}
+
 	public List<Outages> getOutages() {
 		return outages;
 	}
+
 	public void setOutages(List<Outages> outages) {
 		this.outages = outages;
 	}
+
 	public List<ReleaseCalendar> getReleaseCalendars() {
 		return releaseCalendars;
 	}
+
 	public void setReleaseCalendars(List<ReleaseCalendar> releaseCalendars) {
 		this.releaseCalendars = releaseCalendars;
 	}
+
 	public List<Trainings> getTrainings() {
 		return trainings;
 	}
+
 	public void setTrainings(List<Trainings> trainings) {
 		this.trainings = trainings;
 	}
-	
+
+	public List<LeaveCalendar> getLeaveCalendars() {
+		return leaveCalendars;
+	}
+
+	public void setLeaveCalendars(List<LeaveCalendar> leaveCalendars) {
+		this.leaveCalendars = leaveCalendars;
+	}
+
+	public List<WeeklyHighlights> getWeeklyHighlights() {
+		return weeklyHighlights;
+	}
+
+	public void setWeeklyHighlights(List<WeeklyHighlights> weeklyHighlights) {
+		this.weeklyHighlights = weeklyHighlights;
+	}
+
 }

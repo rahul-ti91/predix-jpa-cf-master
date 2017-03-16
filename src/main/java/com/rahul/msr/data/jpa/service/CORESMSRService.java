@@ -309,6 +309,8 @@ public class CORESMSRService {
 		msrReport.setOutages(getMSRData(queryProvider("Outages", month)));
 		msrReport.setReleaseCalendars(getMSRData(queryProvider("ReleaseCalendar", month)));
 		msrReport.setTrainings(getMSRData(queryProvider("Trainings", month)));
+		msrReport.setLeaveCalendars(getMSRData(queryProvider("LeaveCalendar", month)));
+		msrReport.setWeeklyHighlights(getMSRData(queryProvider("WeeklyHighlights", month)));
 		return msrReport;
 	}
 }
