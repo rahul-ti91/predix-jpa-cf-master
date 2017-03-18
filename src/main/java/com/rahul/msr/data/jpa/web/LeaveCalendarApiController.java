@@ -56,8 +56,8 @@ public class LeaveCalendarApiController {
 		customerService.updateLeaveDate(new BigInteger(id), date);
 	}
 
-	@RequestMapping(value = LEAVECALNEDAR, method = RequestMethod.DELETE)
-	public void deleteLeave(@RequestParam BigInteger id) {
-		customerService.deleteLeave(id);
+	@RequestMapping(value = GET_LEAVECALENDAR_BY_ID, method = RequestMethod.DELETE)
+	public void deleteLeave(@PathVariable String id) {
+		customerService.deleteLeave(new BigInteger(id));
 	}
 }
